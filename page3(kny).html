@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IniKomik.com</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        position: relative;
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        margin-top: 100px;
+        margin-bottom: 80px;
+      }
+
+      .navbar {
+        z-index: 1000;
+      }
+
+      .manga-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #343a40;
+        text-align: center;
+      }
+
+      .manga-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .manga-image {
+        flex: 0 0 300px;
+        margin-right: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .manga-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .manga-image:hover img {
+        transform: scale(1.1);
+      }
+
+      .manga-description {
+        flex: 1;
+      }
+
+      .manga-details {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        color: #495057;
+      }
+
+      .manga-details li {
+        margin-bottom: 10px;
+      }
+
+      .manga-full-description {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #495057;
+        margin-bottom: 20px;
+      }
+
+      .additional-images {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .additional-images img {
+        flex: 0 0 48%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .additional-images img:hover {
+        transform: scale(1.1);
+      }
+
+      .btn-container {
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .btn-container a {
+        text-decoration: none;
+      }
+
+      .btn-custom {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .footer {
+        background-color: #343a40;
+        color: white;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+        .manga-container {
+          flex-direction: column;
+        }
+
+        .manga-image {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .additional-images {
+          flex-direction: column;
+        }
+
+        .additional-images img {
+          flex: 0 0 100%; 
+        }
+
+        .video-container {
+          margin-top: 20px; 
+        }
+
+        .btn-container {
+          text-align: center; 
+        }
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/095a51d776.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="font-weight: bolder" href="page1.html"
+          >IniKomik.com</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="page1.html"
+                >Landing Page</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page2.html">Cari Manga</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page4.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="manga-title">Kimetsu No Yaiba</div>
+
+      <div class="manga-container">
+        <div class="manga-image">
+          <img
+            src="foto/page3/kny/kny1.jpeg"
+            class="img-fluid"
+            alt="Manga Cover"
+          />
+        </div>
+
+        <div class="manga-description">
+          <ul class="manga-details">
+            <li><strong>Title:</strong> Demon Slayer ( Jepang : 鬼滅の刃 )</li>
+            <li><strong>Mangaka:</strong> Koyoharu Gotouge</li>
+            <li><strong>First Release:</strong> 15 Februari 2016</li>
+            <li><strong>Status:</strong> End</li>
+            <li><strong>Last Chapter:</strong> Ch. 205.6</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="manga-full-description">
+        <p>
+          Kimetsu no Yaiba (Jepang: 鬼滅の刃, terj. har. "Korps Pembasmi
+          Iblis"), yang diterbitkan di Indonesia dengan judul Demon Slayer:
+          Kimetsu no Yaiba, adalah sebuah seri manga Jepang yang ditulis dan
+          diilustrasikan oleh Koyoharu Gotōge. Ceritanya mengisahkan tentang
+          Tanjiro Kamado, seorang anak laki-laki yang menjadi pembasmi iblis
+          setelah keluarganya dibantai oleh iblis dan adik perempuannya yang
+          bernama Nezuko diubah menjadi iblis. Manga ini dimuat berseri dalam
+          majalah Weekly Shōnen Jump terbitan Shueisha sejak bulan Februari 2016
+          hingga Mei 2020, dan telah dibundel menjadi dua puluh satu volume
+          tankōbon hingga bulan Juli 2020. Manga ini diterbitkan dalam bahasa
+          Inggris oleh Viz Media, sementara Shueisha merilisnya dalam bahasa
+          Inggris dan Spanyol secara serentak dengan perilisannya di Jepang
+          melalui platform Manga Plus milik mereka.
+          <br /><br />
+          Manga ini diadaptasi menjadi sebuah seri anime yang diproduksi oleh
+          Ufotable dan ditayangkan sejak bulan April hingga September 2019.
+          Sekuel berupa film layar lebar diumumkan ketika episode terakhir
+          disiarkan dan dijadwalkan untuk dirilis pada bulan Oktober 2020.
+          <br /><br />
+          Per bulan Mei 2020, manga ini telah terjual sebanyak lebih dari 80
+          juta cetak dalam peredaran—termasuk versi digitalnya, dan membuatnya
+          menjadi salah satu seri manga terlaris. Sementara itu, seri anime-nya
+          telah menerima banyak penghargaan dan dianggap sebagai salah satu
+          anime terbaik pada dekade 2010–an.
+          <br /><br />
+          Berlatar di Jepang pada zaman Taisho, Tanjiro Kamado adalah seorang
+          bocah lelaki baik hati dan cerdas yang tinggal bersama keluarganya dan
+          mencari uang dengan cara menjual arang. Semuanya berubah ketika
+          keluarganya diserang dan dibantai oleh iblis (oni). Tanjiro dan
+          saudarinya Nezuko adalah satu-satunya yang selamat dari insiden
+          tersebut, meskipun Nezuko sekarang telah berubah menjadi iblis—tetapi
+          secara mengejutkan dia masih menunjukkan tanda-tanda emosi dan
+          pemikiran layaknya seorang manusia. Tanjiro kemudian menjadi pembasmi
+          iblis untuk mengembalikan Nezuko menjadi manusia lagi, dan untuk
+          mencegah tragedi yang terjadi pada dia dan adiknya terulang pada orang
+          lain.
+        </p>
+      </div>
+
+      <div class="additional-images">
+        <img
+          src="foto/page3/kny/kny2.png"
+          class="img-fluid"
+          alt="Additional Image 1"
+        />
+        <img
+          src="foto/page3/kny/kny3.png"
+          class="img-fluid"
+          alt="Additional Image 2"
+        />
+      </div>
+
+      <div class="additional-images">
+        <img
+          src="foto/page3/kny/kny4.jpg"
+          class="img-fluid"
+          alt="Additional Image 1"
+        />
+        <img
+          src="foto/page3/kny/kny5.png"
+          class="img-fluid"
+          alt="Additional Image 2"
+        />
+      </div>
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/Jd_B6ox3qGc"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <br />
+      <br />
+
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/A_9gR41ivBU"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="btn-container mt-3">
+        <a href="page2.html" class="btn btn-dark btn-sm">Kembali</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-start">
+            <p>Nama: Rizki Arkant Pratama</p>
+            <p>Nrp: 223011701</p>
+          </div>
+          <div class="col-md-6 text-end">
+            <p>Ingin Mengenal Kami Lebih Lanjut? Klik Icon Dibawah Ini</p>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-discord"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

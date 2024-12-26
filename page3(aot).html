@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IniKomik.com</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        position: relative;
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        margin-top: 100px;
+        margin-bottom: 80px;
+      }
+
+      .navbar {
+        z-index: 1000;
+      }
+
+      .manga-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #343a40;
+        text-align: center;
+      }
+
+      .manga-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .manga-image {
+        flex: 0 0 300px;
+        margin-right: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .manga-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .manga-image:hover img {
+        transform: scale(1.1);
+      }
+
+      .manga-description {
+        flex: 1;
+      }
+
+      .manga-details {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        color: #495057;
+      }
+
+      .manga-details li {
+        margin-bottom: 10px;
+      }
+
+      .manga-full-description {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #495057;
+        margin-bottom: 20px;
+      }
+
+      .additional-images {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .additional-images img {
+        flex: 0 0 48%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .additional-images img:hover {
+        transform: scale(1.1);
+      }
+
+      .btn-container {
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .btn-container a {
+        text-decoration: none;
+      }
+
+      .btn-custom {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .footer {
+        background-color: #343a40;
+        color: white;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+        .manga-container {
+          flex-direction: column;
+        }
+
+        .manga-image {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .additional-images {
+          flex-direction: column;
+        }
+
+        .additional-images img {
+          flex: 0 0 100%;
+        }
+
+        .video-container {
+          margin-top: 20px;
+        }
+
+        .btn-container {
+          text-align: center;
+        }
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/095a51d776.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="font-weight: bolder" href="page1.html"
+          >IniKomik.com</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="page1.html"
+                >Landing Page</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page2.html">Cari Manga</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page4.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="manga-title">Shingeki No Kyoujin</div>
+
+      <div class="manga-container">
+        <div class="manga-image">
+          <img
+            src="foto/page3/aot/aot5.jpg"
+            class="img-fluid"
+            alt="Manga Cover"
+          />
+        </div>
+
+        <div class="manga-description">
+          <ul class="manga-details">
+            <li><strong>Title:</strong> Shingeki no Kyojin ( 進撃の巨人 )</li>
+            <li><strong>Mangaka:</strong> Hajime Isayama</li>
+            <li><strong>First Release:</strong> 9 September 2009</li>
+            <li><strong>Status:</strong> End</li>
+            <li><strong>Last Chapter:</strong> Ch. 139.5</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="manga-full-description">
+        <p>
+          Shingeki no Kyojin (bahasa Jepang: 進撃の巨人, terj. har. "Raksasa
+          [yang] Menyerang"), yang diterbitkan di Indonesia dengan judul Attack
+          on Titan, adalah sebuah seri manga shōnen asal Jepang yang ditulis dan
+          diilustrasikan oleh Hajime Isayama. Ceritanya berlatar di dunia tempat
+          umat manusia hidup di wilayah yang dikelilingi tiga lapis tembok
+          besar, yang melindungi mereka dari makhluk pemakan manusia berukuran
+          raksasa yang dikenal sebagai Titan. Manga ini dimuat berseri dalam
+          majalah Bessatsu Shōnen Magazine terbitan Kodansha sejak bulan
+          September 2009 hingga April 2021, dan telah diterbitkan menjadi 34
+          volume tankōbon per bulan Desember 2020.
+          <br /><br />
+          Manga ini telah diadaptasi menjadi sebuah seri anime yang diproduksi
+          oleh Wit Studio (musim 1–3) dan MAPPA (musim 4). Musim pertama yang
+          terdiri dari 25 episode ditayangkan sejak bulan April hingga September
+          2013, diikuti oleh musim kedua sebanyak 12 episode dari bulan April
+          hingga Juni 2017. Musim ketiga yang terdiri dari 22 episode
+          ditayangkan menjadi dua bagian. 12 episode pertama ditayangkan sejak
+          bulan Juli hingga Oktober 2018 dan 10 episode tersisa ditayangkan
+          sejak bulan April hingga Juli 2019. Musim keempat sekaligus terakhir
+          ditayangkan sejak bulan Desember 2020.
+          <br /><br />
+          Attack on Titan telah meraih kesuksesan kritis dan komersial. Per
+          bulan Desember 2019, manga ini telah terjual sebanyak lebih dari 100
+          juta kopi dalam bentuk cetak di seluruh dunia, membuatnya menjadi
+          salah satu seri manga terlaris sepanjang sejarah. Manga ini telah
+          memenangkan beberapa penghargaan, seperti Penghargaan Manga Kodansha,
+          Penghargaan Micheluzzi,dan Penghargaan Harvey. Adaptasi anime-nya
+          diterima dengan baik oleh para kritikus, dan tiga musim pertamanya
+          mendapatkan pengakuan kritis dan pujian terhadap alur cerita, animasi,
+          musik, dan sulih suaranya. Anime-nya juga terbukti sangat sukses di AS
+          dan Jepang, dan meningkatkan popularitas manga ini. Meskipun Attack on
+          Titan juga menjadi populer di negara Asia lainnya, interpretasi
+          politik atas manga ini menimbulkan kontroversi di Tiongkok dan Korea
+          Selatan.
+          <br /><br />
+          Dalam suatu sejarah alternatif sekitar 1800 tahun yang lalu, seorang
+          manusia bernama Ymir Fritz berubah menjadi raksasa mirip manusia yang
+          dikenal sebagai Titan (巨人 Kyojin) setelah melakukan perjanjian
+          dengan "Iblis dari Seluruh Bumi". Ymir kemudian mati 13 tahun kemudian
+          sebagai "efek samping dari kekuatan tersebut". Kekuatan tersebut
+          diwariskan kepada para putrinya sebelum dibagi kepada sembilan
+          individu yang mendirikan Kekaisaran Eldia. Sang Titan Perintis tetap
+          berada di bawah kendali keluarga Fritz dan mereka kemudian menaklukkan
+          negara Marley dan berkuasa di sana selama 1700 tahun. Namun, seabad
+          sebelum peristiwa dalam cerita utama terjadi, Raja Eldia bernama Karl
+          Fritz kecewa dengan sejarah kelam keluarganya dan mengatur rencana
+          keruntuhan Eldia. Marley kemudian membuat orang Eldia yang tersisa
+          menjadi warga kelas dua sembari mengancam untuk mengasingkan mereka ke
+          Paradis sebagai Titan Murni yang tidak memiliki akal.
+          <br /><br />
+          Karl membawa sisa warganya ke Pulau Paradis dan menggunakan Titan
+          Kolosal yang tak terhitung jumlahnya untuk mendirikan kota berdinding
+          yang terdiri dari tiga lapis tembok: yang paling luar adalah Wall
+          Maria (ウォール・マリア Wōru Maria); yang di tengah disebut Wall Rose
+          (ウォール・ローゼ Wōru Rōze, terkadang dieja menjadi rosé) dan yang
+          terdalam bernama Wall Shina (ウォール・シーナ Wōru Shīna, alt. "Wall
+          Sina").
+          <br /><br />
+          Karl kemudian menggunakan kekuatan Titan Perintis untuk menghapus
+          ingatan sebagian besar orang Eldia. Mereka yang tidak terpengaruh
+          dengan kekuatan tersebut disuap menjadi bangsawan atau dijadikan orang
+          buangan seperti keluarga Ackerman yang melayani keluarga Fritz. Karena
+          kekuatan Titan Perintis, Karl memengaruhi keturunannya untuk
+          melanjutkan tugasnya memerintah bangsa Eldia di dalam tembok dengan
+          mempromosikan rasa takut terhadap serangan Titan, yang identitas
+          aslinya merupakan orang Eldia yang diubah dan diasingkan oleh Marley
+          di Paradis untuk meneror penduduk pulau itu.
+          <br /><br />
+          Karena Karl menggunakan kekuatan Titan Perintis untuk melanjutkan tipu
+          muslihat demi memengaruhi keturunannya, orang Eldia di pulau Paradis
+          percaya bahwa mereka adalah satu-satunya umat manusia yang tersisa di
+          dunia dan menganggap para Titan bertanggung jawab atas teror yang
+          mereka alami. Tidak seperti mereka yang memiliki kekuatan Titan, para
+          Titan Murni nyaris tidak memiliki kesadaran karena mereka menyerang
+          dan memakan manusia yang terlihat secara naluriah. Kulit mereka keras
+          dan sulit ditembus, dan tubuh mereka beregenerasi dengan cepat dari
+          semua luka yang mereka terima, kecuali pada suatu titik di tengkuk
+          mereka—menyerang bagian tersebut adalah satu-satunya cara untuk
+          membunuh mereka. Bangsa Eldia di Paradis mengembangkan cabang-cabang
+          militer mereka sendiri untuk bertarung melawan para Titan.
+          <br /><br />
+          Cabang paling utama adalah Pasukan Penyelidik (調査兵団 Chōsa Heidan)
+          yang dengan sukarela berusaha untuk merebut kembali wilayah yang
+          diambil oleh para Titan dan sangat dicemooh di kalangan masyarakat
+          karena memiliki tingkat korban jiwa yang tinggi dan kurang mengalami
+          kemajuan dalam menjalankan misi. Cabang kedua dan yang terbesar adalah
+          Pasukan Siaga (駐屯兵団 Chūton Heidan), yang menjaga keamanan tembok
+          dan penduduk sipil. Cabang ketiga adalah Polisi Militer (憲兵団
+          Kenpeidan), yang menjaga keluarga kerajaan dan menjalani kehidupan
+          yang relatif santai di wilayah dinding terdalam, meskipun keadaan ini
+          pada akhirnya membuat mereka terlibat dalam penipuan, korupsi, dan
+          akal-akalan politik. Para prajurit menggunakan alat penggenggam besi
+          sekaligus pengikat tubuh yang disebut Alat Manuver Tiga Dimensi
+          (立体機動装置 Rittai Kidō Sōchi). Alat tersebut memungkinkan mereka
+          untuk melompat ke (dan berayun dari) dinding, pohon, atau bangunan
+          terdekat untuk menyerang Titan dengan pedang ganda, serta menggunakan
+          tabung gas untuk mendorong tubuh mereka sendiri. Namun, meskipun
+          peralatan itu menjadi daya tempur utama prajurit baik dari serangan
+          dan pertahanan terhadap para Titan, peralatan tersebut tidak berguna
+          di medan terbuka dan datar seperti tanah lapang.
+        </p>
+      </div>
+
+      <div class="additional-images">
+        <img
+          src="foto/page3/aot/aot2.jpg"
+          class="img-fluid"
+          alt="Additional Image 1"
+        />
+        <img
+          src="foto/page3/aot/aot3.jpg"
+          class="img-fluid"
+          alt="Additional Image 2"
+        />
+      </div>
+
+      <div class="additional-images">
+        <img
+          src="foto/page3/aot/aot4.jpeg"
+          class="img-fluid"
+          alt="Additional Image 1"
+        />
+        <img
+          src="foto/page3/aot/aot1.jpg"
+          class="img-fluid"
+          alt="Additional Image 2"
+        />
+      </div>
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/vGuQeQsoRgU"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <br />
+      <br />
+
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/QZXPeRPZ3U4"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="btn-container mt-3">
+        <a href="page2.html" class="btn btn-dark btn-sm">Kembali</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-start">
+            <p>Nama: Rizki Arkant Pratama</p>
+            <p>Nrp: 223011701</p>
+          </div>
+          <div class="col-md-6 text-end">
+            <p>Ingin Mengenal Kami Lebih Lanjut? Klik Icon Dibawah Ini</p>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-discord"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

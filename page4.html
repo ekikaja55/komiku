@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IniKomik.com</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-mn4P4Q1K5ZLzl96rP2sbjEXXzj+KqAqMKZ5d6G/odj1K6d1Zu+jiFD2N5U1qkkMN4g4fs7TP6M7U0+P7fbl8Nw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        padding-top: 70px; /* Tambahkan padding untuk menyertakan navbar */
+      }
+
+      .container {
+        margin-top: 50px;
+      }
+
+      .quiz-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .level {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .question {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+
+      .images-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+
+      .quiz-image {
+        width: 300px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .quiz-image:hover {
+        transform: scale(1.1);
+        filter: brightness(80%);
+      }
+
+      .quiz-image.clicked {
+        pointer-events: none;
+      }
+
+      .result-message {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .btn-next {
+        margin-top: 20px;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .footer {
+        background-color: #343a40;
+        color: white;
+        padding: 20px 0;
+        bottom: 0;
+        margin-top: 80vh;
+      }
+
+      .footer a {
+        color: white;
+      }
+
+      @media (max-width: 767px) {
+        .images-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .quiz-image {
+          width: 170px;
+          height: 100px;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/095a51d776.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="font-weight: bolder" href="page1.html"
+          >IniKomik.com</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="page1.html"
+                >Landing Page</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page2.html">Cari Manga</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page4.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <div class="container">
+      <h1>ANIME QUIZ ( 10 LEVELS )</h1>
+    </div>
+
+    <div class="container">
+      <div class="quiz-container">
+        <div class="level" id="level">Level 1</div>
+        <div class="question" id="question">Siapakah Karakter Utama ?</div>
+        <div class="images-container">
+          <img
+            src="quiz/a2.png"
+            alt="Character 1"
+            class="quiz-image"
+            onclick="checkAnswer(true)"
+          />
+          <img
+            src="quiz/a1.jpg"
+            alt="Character 2"
+            class="quiz-image"
+            onclick="checkAnswer(false)"
+          />
+        </div>
+        <div class="result-message" id="result-message"></div>
+        <button
+          id="btn-next"
+          class="btn btn-dark btn-next hide"
+          onclick="nextLevel()"
+        >
+          Next Level
+        </button>
+        <button class="btn btn-dark btn-next" onclick="quitGame()">Quit</button>
+      </div>
+    </div>
+    <br />
+    <div class="container">
+      <h4>
+        Penjelasan Game : Game diatas merupakan quiz sederhana bertema tentang
+        anime, pemain hanya perlu memilih mana jawaban yang benar dan jika salah
+        memilih level akan direset ke level 1 dan game ini memiliki 10 level
+        tingkat kesulitan yang berbeda - beda
+      </h4>
+    </div>
+    <br />
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-4">
+          <img
+            src="foto/page1/sampul/ekik.jpg"
+            alt="Profil Image"
+            class="img-fluid rounded"
+          />
+        </div>
+
+        <div class="col-md-8">
+          <h2 style="color: brown">About Me</h2>
+          <p>
+            Hai perkenalkan, nama saya
+            <span style="font-weight: bold; color: brown"
+              >Rizki Arkant Pratama</span
+            >. Saya terlahir di Pulau Dewata, tepatnya di Pulau Bali, Kota
+            Denpasar 2 Februari 2004, saya anak pertama dari lima bersaudara,
+            hobi saya
+            <span style="font-weight: bold; color: brown"
+              >Bermain Catur, Membaca Buku, dan Tidur</span
+            >, saat ini saya sedang menekuni pendidikan tingkat lanjut saya di
+            <span style="font-weight: bold; color: brown"
+              >Institut Sains dan Teknologi Terpadu Surabaya </span
+            >,mengambil degree Diploma 3 jurusan Sistem Informasi. Saya berharap
+            saya bisa lulus dengan nilai yang memuaskan dan beasiswa yang
+            berhasil diperpanjang. Saya juga ingin mengejar cita - cita saya
+            menjadi seorang progammer profesional, semoga saja saya bisa
+            mencapainya,
+            <span style="font-weight: bold; color: brown">Amin</span>.
+          </p>
+          <p style="font-weight: bold; color: brown">
+            ingin tahu lebih lanjut tentang saya? follow Instagram saya, ada di
+            footer, hehe...
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-start">
+            <p>Nama: Rizki Arkant Pratama</p>
+            <p>Nrp : 223011701</p>
+          </div>
+          <div class="col-md-6 text-end">
+            <p>Ingin Mengenal Kami Lebih Lanjut? Klik Icon Dibawah Ini</p>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-discord"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      let currentLevel = 1;
+      let hasAnsweredCorrectly = false;
+
+      const levels = [
+        {
+          question:
+            "Siapakah Yang Dapat Memiliki Kelenturan Tubuh Lebih Baik ?",
+          correctImageIndex: 0,
+          images: ["quiz/b1.png", "quiz/b2.jpg"],
+        },
+        {
+          question:
+            "Siapakah Karakter Yang Mampu Berubah Menjadi Iblis Gergaji ?",
+          correctImageIndex: 0,
+          images: ["quiz/c1.jpeg", "quiz/c2.jpeg"],
+        },
+        {
+          question: "Siapakah Karakter Yang Merupakan Jinchuriki Ekor 9 ? ",
+          correctImageIndex: 1,
+          images: ["quiz/d2.jpg", "quiz/d1.jpg"],
+        },
+        {
+          question: "Siapakah Karakter Yang Mati Terbelah Jadi Dua ?",
+          correctImageIndex: 1,
+          images: ["quiz/e2.png", "quiz/e1.jpeg"],
+        },
+
+        {
+          question:
+            "Di Manga Tokyo Ghoul, Siapakah Karakter Yang Memiliki Keahlian Mmebuat Topeng Untuk Para Ghoul ?",
+          correctImageIndex: 0,
+          images: ["quiz/f2.jpg", "quiz/f1.jpg"],
+        },
+        {
+          question:
+            "Di Manga Mushoku Tensei, Siapakah Wanita Pertama Yang Bertemu Dengan Rudeus ?  ",
+          correctImageIndex: 1,
+          images: ["quiz/g2.jpg", "quiz/g1.jpeg"],
+        },
+        {
+          question:
+            "Di Manga Attack On Titan, Siapakah Yang Mati Tertembak Saat Penyerangan Bangsa Marley Oleh Pasukan Survey Corp ?",
+          correctImageIndex: 0,
+          images: ["quiz/h1.jpeg", "quiz/h2.jpeg"],
+        },
+        {
+          question:
+            "Di Manga Black Clover, Siapakah Karakter Yang Memiliki Kemampuan Dark Magic : Dark Cloaked Dimension Slash ?",
+          correctImageIndex: 1,
+          images: ["quiz/i1.jpg", "quiz/i2.png"],
+        },
+        {
+          question:
+            "Di Manga One Piece, Siapakah Karakter Yang Mengalahkan King ?",
+          correctImageIndex: 1,
+          images: ["quiz/j1.png", "quiz/j2.jpg"],
+        },
+        {
+          question:
+            "Di Manga Akudama Drive Siapakah Karakter Yang Mendapat Julukan Swindler ( Penipu ) ?",
+          correctImageIndex: 0,
+          images: ["quiz/k2.png", "quiz/k1.png"],
+        },
+      ];
+
+      function nextLevel() {
+        if (hasAnsweredCorrectly && currentLevel < levels.length) {
+          currentLevel++;
+          updateLevel();
+          resetGame();
+        } else if (hasAnsweredCorrectly && currentLevel === levels.length) {
+          alert("SELAMAT ANDA TERNYATA BUKAN WIBU BIASA");
+        }
+      }
+
+      function quitGame() {
+        currentLevel = 1;
+        updateLevel();
+        resetGame();
+      }
+
+      function updateLevel() {
+        document.getElementById("level").innerText = "Level " + currentLevel;
+      }
+
+      function resetGame() {
+        hasAnsweredCorrectly = false;
+        const question = levels[currentLevel - 1].question;
+        document.getElementById("question").innerText = question;
+        document.getElementById("result-message").innerText = "";
+
+        const images = document.querySelectorAll(".quiz-image");
+        images.forEach((image) => {
+          image.classList.remove("clicked");
+          image.style.transform = "scale(1)";
+        });
+
+        const levelImages = levels[currentLevel - 1].images;
+        images.forEach((image, index) => {
+          image.src = levelImages[index];
+        });
+
+        const nextButton = document.getElementById("btn-next");
+        nextButton.classList.add("hide");
+      }
+
+      function checkAnswer(isCorrect) {
+        const correctImageIndex = levels[currentLevel - 1].correctImageIndex;
+        const selectedImageIndex = isCorrect ? 0 : 1;
+
+        const images = document.querySelectorAll(".quiz-image");
+        images.forEach((image, index) => {
+          if (index === correctImageIndex) {
+            image.style.transform = "scale(1.1)";
+          } else {
+            image.classList.add("clicked");
+          }
+        });
+
+        const resultMessage = document.getElementById("result-message");
+        const nextButton = document.getElementById("btn-next");
+
+        if (selectedImageIndex === correctImageIndex) {
+          resultMessage.innerText = "Selamat!, Jawaban Anda Benar";
+          hasAnsweredCorrectly = true;
+          nextButton.classList.remove("hide");
+        } else {
+          resultMessage.innerText =
+            "Sayang Sekali Jawaban Anda Salah, Ulang Kembali Ke Level 1";
+          hasAnsweredCorrectly = false;
+          nextButton.classList.add("hide");
+        }
+      }
+    </script>
+  </body>
+</html>

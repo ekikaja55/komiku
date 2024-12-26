@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IniKomik.com</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        position: relative;
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        margin-top: 100px;
+        margin-bottom: 80px;
+      }
+
+      .navbar {
+        z-index: 1000;
+      }
+
+      .manga-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #343a40;
+        text-align: center;
+      }
+
+      .manga-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .manga-image {
+        flex: 0 0 300px;
+        margin-right: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .manga-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .manga-image:hover img {
+        transform: scale(1.1);
+      }
+
+      .manga-description {
+        flex: 1;
+      }
+
+      .manga-details {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        color: #495057;
+      }
+
+      .manga-details li {
+        margin-bottom: 10px;
+      }
+
+      .manga-full-description {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #495057;
+        margin-bottom: 20px;
+      }
+
+      .additional-images {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .additional-images img {
+        flex: 0 0 48%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .additional-images img:hover {
+        transform: scale(1.1);
+      }
+
+      .btn-container {
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .btn-container a {
+        text-decoration: none;
+      }
+
+      .btn-custom {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .footer {
+        background-color: #343a40;
+        color: white;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+        .manga-container {
+          flex-direction: column;
+        }
+
+        .manga-image {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .additional-images {
+          flex-direction: column;
+        }
+
+        .additional-images img {
+          flex: 0 0 100%;
+        }
+
+        .video-container {
+          margin-top: 20px;
+        }
+
+        .btn-container {
+          text-align: center;
+        }
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/095a51d776.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="font-weight: bolder" href="page1.html"
+          >IniKomik.com</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="page1.html"
+                >Landing Page</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page2.html">Cari Manga</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page4.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="manga-title">Naruto</div>
+
+      <div class="manga-container">
+        <div class="manga-image">
+          <img
+            src="foto/page3/nrt/nrt1.jpg"
+            class="img-fluid"
+            alt="Manga Cover"
+          />
+        </div>
+
+        <div class="manga-description">
+          <ul class="manga-details">
+            <li><strong>Title:</strong> Naruto ( ナルト )</li>
+            <li><strong>Mangaka:</strong> Masashi Kishimoto</li>
+            <li><strong>First Release:</strong> 21 September 1999</li>
+            <li><strong>Status:</strong> End</li>
+            <li><strong>Last Chapter:</strong> Ch. 711</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="manga-full-description">
+        <p>
+          Naruto (ナルト) adalah sebuah serial manga karya Masashi Kishimoto
+          yang diadaptasi menjadi serial anime. Manga Naruto bercerita seputar
+          kehidupan tokoh utamanya, Naruto Uzumaki, seorang ninja yang
+          hiperaktif, periang, dan ambisius yang ingin mewujudkan keinginannya
+          untuk mendapatkan gelar Hokage, pemimpin dan ninja terkuat di desanya.
+          Serial ini didasarkan pada komik one-shot oleh Kishimoto yang
+          diterbitkan dalam edisi Akamaru Jump pada Agustus 1997.
+          <br /><br />
+          Manga Naruto pertama kali diterbitkan di Jepang oleh Shueisha pada
+          tahun 1999 dalam edisi ke-43 majalah Shonen Jump. Di Indonesia, manga
+          ini diterbitkan oleh Elex Media Komputindo. Popularitas dan panjang
+          seri Naruto sendiri (terutama di Jepang) menyaingi Dragon Ball karya
+          Akira Toriyama, sedangkan serial anime Naruto, diproduksi oleh Studio
+          Pierrot dan Aniplex, disiarkan secara perdana di Jepang oleh jaringan
+          TV Tokyo dan juga oleh jaringan televisi satelit khusus anime, seperti
+          Animax dan stasiun televisi lainnya, pada 3 Oktober 2002 sampai
+          sekarang. Seri pertama terdiri atas 9 musim dan berlangsung 220
+          episode. Musim pertama dari seri kedua mulai ditayangkan pada tanggal
+          15 Februari 2007. Di Indonesia sendiri, anime Naruto pernah
+          ditayangkan oleh stasiun televisi Trans TV pada tahun 2004 hingga
+          2005, yang kemudian ditayangkan lebih lanjut oleh GTV sejak tahun 2005
+          dan sempat ditayangkan di Indosiar untuk musim keempat dan kelima
+          sampai Naruto Shippuden musim kelima dari tahun 2008 hingga 2009.
+          Selain serial anime, Studio Pierrot telah mengembangkan delapan film
+          untuk seri dan beberapa original video animation (OVA). Jenis barang
+          dagangan termasuk novel ringan, permainan video dan koleksi kartu yang
+          dikembangkan oleh beberapa perusahaan.
+          <br /><br />
+          Viz Media memiliki lisensi manga dan anime produksi Amerika Utara. Viz
+          telah menerbitkan seri ini ke dalam majalah mereka, yaitu Shonen Jump,
+          serta beberapa volume. Seri anime ini mulai ditayangkan di Amerika
+          Serikat dan Kanada pada tahun 2005, dan kemudian di Inggris dan
+          Australia pada tahun 2006 dan 2007. Film, serta sebagian OVA dari seri
+          ini juga telah dirilis oleh Viz, dengan tayang perdana di bioskop.
+          Volume DVD pertama Naruto: Shippuden dirilis oleh Viz di Amerika Utara
+          pada 29 September 2009, dan mulai disiarkan di Disney XD pada bulan
+          Oktober pada tahun yang sama. Naruto Shippuden ditayangkan di Adult
+          Swim, Toonami pada Januari 2014. Viz Media mulai streaming kedua seri
+          pada layanan streaming Neon Alley mereka pada Desember 2012.
+          <br /><br />
+          Naruto Uzumaki, seorang anak yatim piatu yang tinggal di desa
+          Konohagakure, memiliki impian besar untuk menjadi Hokage, pemimpin
+          tertinggi desanya, agar ia diakui oleh warga desa yang selama ini
+          menganggapnya sebagai anak yang terkucil. Namun, Naruto memiliki
+          rahasia besar yang menyertainya - ia adalah tempat penyimpanan dari
+          monster rubah sembilan ekor, Kyuubi, yang pernah menyerang desanya.
+          <br /><br />
+          Dalam perjalanan untuk mencapai mimpinya, Naruto bergabung dengan tim
+          ninja yang terdiri dari teman-teman sebaya, Sasuke Uchiha dan Sakura
+          Haruno, di bawah bimbingan guru mereka, Kakashi Hatake. Bersama-sama,
+          mereka menjalani berbagai misi ninja, menghadapi berbagai musuh, dan
+          tumbuh sebagai ninja yang kuat.
+          <br /><br />
+          Saat cerita berkembang, Sasuke, teman dekat Naruto, memutuskan untuk
+          mencari kekuatan lebih besar dan meninggalkan desa. Ini memicu
+          perjalanan Naruto yang panjang untuk membawa kembali temannya sambil
+          menghadapi ancaman besar yang melibatkan organisasi rahasia, Akatsuki,
+          yang berusaha menguasai dunia dengan kekuatan bijuu (monster ekor).
+          <br /><br />
+          Selama perjalanan ini, Naruto belajar tentang persahabatan,
+          keberanian, pengorbanan, dan pentingnya memahami dan menerima orang
+          lain. Dia juga bertemu dengan berbagai karakter menarik dan kuat,
+          termasuk gurunya Jiraiya, Tsunade (Hokage Kelima), dan banyak ninja
+          lainnya.
+          <br /><br />
+          Cerita Naruto tidak hanya tentang pertempuran fisik, tetapi juga
+          tentang perjalanan emosional dan perkembangan karakter. Naruto
+          berjuang melawan takdirnya sambil mencari makna hidup dan
+          identitasnya, dan seiring berjalannya waktu, dia tumbuh menjadi
+          seorang pahlawan yang dihormati oleh seluruh desa.
+        </p>
+      </div>
+
+      <div class="additional-images">
+        <img
+          src="foto/page3/nrt/nrt2.jpg"
+          class="img-fluid"
+          alt="Additional Image 1"
+        />
+        <img
+          src="foto/page3/nrt/nrt3.jpg"
+          class="img-fluid"
+          alt="Additional Image 2"
+        />
+      </div>
+
+      <div class="additional-images">
+        <img
+          src="foto/page3/nrt/nrt4.jpg"
+          class="img-fluid"
+          alt="Additional Image 1"
+        />
+        <img
+          src="foto/page3/nrt/nrt5.jpg"
+          class="img-fluid"
+          alt="Additional Image 2"
+        />
+      </div>
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/QczGoCmX-pI"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <br />
+      <br />
+
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/IER6REy5qtw"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="btn-container mt-3">
+        <a href="page2.html" class="btn btn-dark btn-sm">Kembali</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-start">
+            <p>Nama: Rizki Arkant Pratama</p>
+            <p>Nrp: 223011701</p>
+          </div>
+          <div class="col-md-6 text-end">
+            <p>Ingin Mengenal Kami Lebih Lanjut? Klik Icon Dibawah Ini</p>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-discord"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IniKomik.com</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        position: relative;
+        padding-bottom: 60px;
+      }
+
+      .navbar {
+        z-index: 1000;
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: #343a40;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      @media (max-width: 576px) {
+        .footer {
+          font-size: 14px;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .responsive-text {
+          font-size: 2vw;
+        }
+
+        .btn-primary {
+          font-size: 0.5vw;
+          padding: 0.5rem 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .responsive-text {
+          font-size: 4.5vw;
+        }
+
+        .btn-primary {
+          font-size: 3.5vw;
+          padding: 0.5rem 1rem;
+        }
+      }
+
+      .card {
+        max-width: 100%;
+        display: block;
+      }
+
+      .card-img {
+        max-height: 200px;
+        object-fit: cover;
+      }
+
+      .search-container {
+        margin: 70px 0 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .search-container input {
+        width: 70%;
+        margin-right: 10px;
+      }
+
+      .search-container button {
+        width: 30%;
+      }
+
+      .reset-button {
+        width: 30%;
+        margin-left: 10px;
+      }
+
+      @media (max-width: 576px) {
+        .search-container input {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        .search-container button,
+        .reset-button {
+          width: 100%;
+        }
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/095a51d776.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="page-body">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="font-weight: bolder" href="page1.html"
+          >IniKomik.com</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="page1.html"
+                >Landing Page</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page2.html">Cari Manga</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page4.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <div class="search-container">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Cari Manga..."
+          id="searchInput"
+        />
+        <button class="btn btn-dark" type="button" onclick="filterCards()">
+          Cari
+        </button>
+        <button
+          class="btn btn-dark reset-button"
+          type="button"
+          onclick="resetFilter()"
+        >
+          Reset
+        </button>
+      </div>
+
+      <div class="card mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="foto/page2/sampul1.png"
+              class="img-fluid card-img"
+              alt="Card Image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Boku No Hero Academia</h5>
+              <p class="card-text">
+                Di tengah kisah epik Boku No Hero Academia, penonton dibawa ke
+                dalam dunia yang terangkai oleh keajaiban super dan tekad
+                pahlawan. Midoriya Izuku, sang protagonis, adalah refleksi tekad
+                murni yang bertahan di bawah bayang-bayang ketidaksempurnaan.
+                Melalui perjuangannya memahami dan meraih kekuatannya, Izuku
+                merintis jalan menuju puncak heroisme, mencerahkan kegelapan
+                dengan keberanian.
+              </p>
+              <a href="page3(bnh).html" class="btn btn-dark btn-sm"
+                >Selengkapya</a
+              >
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="foto/page2/sampul2.jpg"
+              class="img-fluid card-img"
+              alt="Card Image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Kimetsu No Yaiba</h5>
+              <p class="card-text">
+                Kimetsu No Yaiba adalah sebuah odisei yang mencengangkan,
+                menelusuri jejak seorang pahlawan dengan hati yang dikuatkan
+                oleh tragedi. Tanjiro Kamado, yang dihantui oleh malam kelam,
+                membuktikan bahwa bahkan dalam kegelapan terdalam, api keadilan
+                dapat menyala. Dengan pedangnya yang berkilau dan tekadnya yang
+                tak tergoyahkan, Tanjiro melawan kegelapan iblis untuk
+                menyelamatkan adiknya dan membawa sinar harapan ke dunia yang
+                kelam.
+              </p>
+              <a href="page3(kny).html" class="btn btn-dark btn-sm"
+                >Selengkapya</a
+              >
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="foto/page2/sampul3.jpeg"
+              class="img-fluid card-img"
+              alt="Card Image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Jujutsu Kaisen</h5>
+              <p class="card-text">
+                Dalam rimba magis Jujutsu Kaisen, naratifnya adalah tarian
+                elegan antara kehidupan dan kematian. Yuji Itadori, sang penari
+                utama, menyesuaikan langkah-langkahnya dengan takdir dan
+                keberanian. Karya seni ini menggambarkan pertarungan melawan
+                makhluk terkutuk sebagai tarian kehidupan, di mana keberanian
+                dan tekad membentuk simfoni yang menggema dalam kegelapan.
+              </p>
+              <a href="page3(jjk).html" class="btn btn-dark btn-sm"
+                >Selengkapya</a
+              >
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="foto/page2/sampul4.jpg"
+              class="img-fluid card-img"
+              alt="Card Image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Tokyo Ghoul</h5>
+              <p class="card-text">
+                Tokyo Ghoul adalah opera tragedi modern yang melibatkan Kaneki
+                Ken sebagai protagonis yang melalui perjalanan identitas dan
+                penerimaan diri. Di dalam kengerian kemanusiaan yang terbelah,
+                Kaneki adalah simbol keabadian dan kebinasaan. Dalam pertarungan
+                melawan iblis batin dan luar, dia menemukan harmoni di antara
+                ketidaksempurnaan manusia dan ghoul.
+              </p>
+              <a href="page3(tky).html" class="btn btn-dark btn-sm"
+                >Selengkapya</a
+              >
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="foto/page2/sampul5.jpg"
+              class="img-fluid card-img"
+              alt="Card Image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Mushoku Tensei: Jobless Reincarnation</h5>
+              <p class="card-text">
+                Dengan lekuk cerita yang mengalir seperti air sungai, Mushoku
+                Tensei: Jobless Reincarnation mengajak kita menyelami reruntuhan
+                impian dan kesempatan kedua. Rudeus Greyrat, pahlawan kita,
+                menari dengan aliran waktu, membentuk takdirnya dalam gemerlap
+                kehidupan baru. Dalam melodi kesepian dan pengharapan, dia
+                mengejar sinar matahari terbit.
+              </p>
+              <a href="page3(msk).html" class="btn btn-dark btn-sm"
+                >Selengkapya</a
+              >
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="foto/page2/sampul6.jpeg"
+              class="img-fluid card-img"
+              alt="Card Image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Shingeki No Kyoujin (Attack on Titan)</h5>
+              <p class="card-text">
+                Shingeki No Kyoujin adalah epos tragedi yang merentang melintasi
+                medan perang kemanusiaan dan pertempuran melawan monster
+                raksasa. Eren Yeager dan kawan-kawan adalah simbol perlawanan
+                terakhir di hadapan Titan yang menghancurkan. Dengan melodi
+                perang dan rahasia yang membingungkan, kisah ini menuntun kita
+                ke dalam labirin kebenaran yang membingungkan.
+              </p>
+              <a href="page3(aot).html" class="btn btn-dark btn-sm"
+                >Selengkapya</a
+              >
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="foto/page2/sampul7.png"
+              class="img-fluid card-img"
+              alt="Card Image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Naruto</h5>
+              <p class="card-text">
+                Di antara dedaunan desa ninja, Naruto adalah bunga yang tumbuh
+                melalui retak-retak jalan. Dengan mimpi besar dan hati yang tak
+                tergoyahkan, Naruto merentangkan sayapnya di langit yang biru.
+                Kisah ini adalah simfoni ninja yang melibatkan perjuangan,
+                persahabatan, dan pencarian jati diri di antara bayangan masa
+                lalu.
+              </p>
+              <a href="page3(nrt).html" class="btn btn-dark btn-sm"
+                >Selengkapya</a
+              >
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="foto/page2/sampul8.jpg"
+              class="img-fluid card-img"
+              alt="Card Image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Black Clover</h5>
+              <p class="card-text">
+                Dalam taman sihir yang megah, Asta adalah bunga yang tumbuh
+                tanpa sihir, tetapi tetap berbunga dengan kegigihan dan tekad.
+                Black Clover adalah sonata sihir yang menciptakan harmoni di
+                antara perbedaan. Asta, dengan pedang anti-sihirnya, menari di
+                atas panggung kehidupan, membuktikan bahwa kekuatan sejati tidak
+                selalu bersumber dari sihir.
+              </p>
+              <a href="page3(bcl).html" class="btn btn-dark btn-sm"
+                >Selengkapya</a
+              >
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="foto/page2/sampul9.png"
+              class="img-fluid card-img"
+              alt="Card Image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Akudama Drive</h5>
+              <p class="card-text">
+                Akudama Drive adalah seni ekspresionis di dalam jalanan
+                futuristik, di mana kriminal dan pemberontak menggubah simfoni
+                kebebasan dan kekacauan. Di antara lonceng kota yang berdentang
+                dan sorotan neon, para Akudama berjuang untuk eksistensi mereka
+                dalam tarian cahaya dan bayangan.
+              </p>
+              <a href="page3(akd).html" class="btn btn-dark btn-sm"
+                >Selengkapya</a
+              >
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="foto/page2/sampul10.jpg"
+              class="img-fluid card-img"
+              alt="Card Image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Chainsaw Man</h5>
+              <p class="card-text">
+                Dalam ketidakterdugaan ketika kehidupan berbaur dengan kegilaan,
+                Denji adalah diri yang mengalir melalui derasnya pertarungan
+                melawan iblis. Chainsaw Man, sosok yang membelah dengan kekuatan
+                gergaji, adalah metafora untuk pembajakan kehidupan. Dengan
+                suara mesin yang menggema, Denji menyusuri jalan buntu dan
+                mengukir jalannya sendiri melalui kegelapan.
+              </p>
+              <a href="page3(cns).html" class="btn btn-dark btn-sm"
+                >Selengkapya</a
+              >
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br /><br />
+
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-start">
+            <p>Nama: Rizki Arkant Pratama</p>
+            <p>Nrp: 223011701</p>
+          </div>
+          <div class="col-md-6 text-end">
+            <p>Ingin Mengenal Kami Lebih Lanjut? Klik Icon Dibawah Ini</p>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-discord"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/rizkiarkant/"
+              class="text-white me-2"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function filterCards() {
+        var input, filter, cards, card, title, i;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        cards = document.querySelectorAll(".card");
+
+        for (i = 0; i < cards.length; i++) {
+          card = cards[i];
+          title = card.querySelector(".card-title");
+          if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        }
+      }
+
+      function resetFilter() {
+        var cards = document.querySelectorAll(".card");
+        for (var i = 0; i < cards.length; i++) {
+          cards[i].style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
